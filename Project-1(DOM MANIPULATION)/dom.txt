@@ -1,0 +1,9 @@
+what is DOM and DOM manipulation
+-> Document Object Model
+it is usually a process or method to manipulate the elements of the html contents.
+a dom is basically a tree structured where each node containing the html elements such as link section, body,head etc
+(see the screenshot).
+a dom is created whenever an html page is loaded.
+dom contains libraries to make JS use in webpages rendering
+dom is created or written using JS as dom is not JS itself!!!!
+
