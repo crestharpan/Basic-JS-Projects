@@ -136,7 +136,7 @@ const displayMovements = function (acc, sort) {
   movs.forEach(function (value, index) {
     const type = value > 0 ? "deposit" : "withdrawal";
     const date = new Date(acc.movementsDates[index]);
-    // console.log(acc.locale);
+
     const displayDate = formatMovementsDate(date, acc.locale);
     const formattedMov = formatCur(value, acc.locale, acc.currency);
 
@@ -235,7 +235,6 @@ const startLogOutTimer = function () {
 let currentAccount, timer;
 
 btnLogin.addEventListener("click", function (e) {
-  // console.log(e);
   e.preventDefault(); //Prevent form from submitting
   currentAccount = accounts.find(
     (acc) => acc.username === inputLoginUsername.value
@@ -260,7 +259,7 @@ btnLogin.addEventListener("click", function (e) {
       year: "numeric",
       weekday: "long",
     };
-    // const locale = navigator.language;
+
     labelDate.textContent = new Intl.DateTimeFormat(
       currentAccount.locale,
       option
@@ -279,7 +278,7 @@ btnTransfer.addEventListener("click", function (e) {
   );
   const amount = +inputTransferAmount.value;
   console.log(amount);
-  // console.log(currentAccount);
+
   if (
     amount > 0 &&
     currentAccount.balance >= amount &&
@@ -343,7 +342,7 @@ btnSort.addEventListener("click", function (e) {
   e.preventDefault();
   let sort = !sorted;
   console.log(currentAccount);
-  displayMovements(currentAccount.movements, sort);
+  displayMovements(currentAccount, sort);
   sorted = !sorted;
 });
 //
